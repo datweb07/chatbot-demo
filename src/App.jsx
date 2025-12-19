@@ -68,7 +68,7 @@ const App = () => {
           <div className="message bot-message">
             <ChatbotIcon />
             <p className="message-text">
-              Hey there 👋 <br /> How can I help you today?
+              Chào bạn 👋 <br /> Tôi có thể giúp gì cho bạn hôm nay?
             </p>
           </div>
 
