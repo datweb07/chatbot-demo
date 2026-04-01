@@ -100,7 +100,7 @@ import ChatMessage from "./components/ChatMessage";
 
 const App = () => {
   const [chatHistory, setChatHistory] = useState([]);
-  const [showChatbot, setShowChatbot] = useState(false); // ✅ fix bug
+  const [showChatbot, setShowChatbot] = useState(false); 
   const chatBodyRef = useRef();
 
   const generateBotResponse = async (history) => {
@@ -111,7 +111,6 @@ const App = () => {
       ]);
     };
 
-    // ✅ convert sang format của Groq (OpenAI style)
     const messages = history.map(({ role, text }) => ({
       role: role === "model" ? "assistant" : "user",
       content: text,
@@ -139,7 +138,6 @@ const App = () => {
         throw new Error(data.error?.message || "Something went wrong");
       }
 
-      // ✅ lấy text đúng format Groq
       const apiResponseText = data.choices[0].message.content
         .replace(/\*\*(.*?)\*\*/g, "$1")
         .trim();
